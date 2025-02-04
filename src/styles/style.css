@@ -1,0 +1,71 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --primary-color: #7c3aed;
+  --primary-light: #7c3aed;
+  --background-color: #121214;
+  --text-primary: #f3f4f6;
+}
+
+body {
+  background-color: var(--background-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-primary);
+}
+
+.welcome-container {
+  text-align: center;
+  padding: 2rem;
+  max-width: 600px;
+}
+
+.welcome-icon {
+  font-size: 4rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: #64748b;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.select-folder-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: background-color 0.2s;
+}
+
+.select-folder-btn:hover {
+  background-color: var(--primary-light);
+}
+
+.loading {
+  display: none;
+  margin-top: 2rem;
+  color: var(--primary-color);
+}

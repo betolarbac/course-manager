@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Organizador de Vídeos</title>
+  <link rel="stylesheet" href="styles/player.css">
+
+</head>
+
+<body>
+  <div class="header">
+    <button class="change-folder" onclick="window.location.href='welcome.html'">
+      <i class="fas fa-arrow-left"></i>
+      Voltar
+    </button>
+    <h1>Organizador de Vídeos</h1>
+  </div>
+
+  <div class="container">
+    <div class="sidebar swiper">
+      <div id="courseList" class="courseList swiper-wrapper"></div>
+
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="main-content">
+
+      <div id="videoList" class="video-grid"></div>
+      <div class="video-player-container">
+        <video id="videoPlayer" controls>
+          Seu navegador não suporta o elemento de vídeo.
+        </video>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="js/player.js"></script>
+</body>
+
+</html>
