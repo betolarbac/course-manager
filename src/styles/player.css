@@ -270,7 +270,8 @@ video {
 @media (max-width: 1200px) {
 
   .video-grid {
-    height: 420px;
+    height: fit-content;
+    max-height: 420px;
   }
 
 }
