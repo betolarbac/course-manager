@@ -33,7 +33,9 @@ function createWindow() {
       nodeIntegration: true,
       contextIsolation: false,
       webSecurity: false
-    }
+    },
+    autoHideMenuBar: true,
+    icon: path.join(__dirname, 'assets', 'favicon.ico'),
   });
 
   mainWindow.loadFile('src/welcome.html');
