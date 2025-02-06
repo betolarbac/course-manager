@@ -3,9 +3,31 @@
   "version": "1.0.0",
   "main": "src/main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder"
   },
-  "dependencies": {
-    "electron": "^28.0.0"
+  "build": {
+    "appId": "com.course-manager.electron",
+    "productName": "Course Manager",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "devDependencies": {
+    "electron": "34.1.0",
+    "electron-builder": "^25.1.8"
   }
 }
