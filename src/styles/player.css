@@ -32,7 +32,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid #1f2937;
+  border-bottom: 1px solid gray;
 
   display: flex;
   align-items: baseline;
@@ -66,17 +66,16 @@ body {
 
 .container {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   max-width: 1600px;
   margin: 0 auto;
 }
 
 .sidebar {
-  background-color: var(--surface-color);
-  border-radius: 1rem;
   padding: 1.5rem;
   height: fit-content;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid gray;
 }
 
 .sidebar h2 {
@@ -92,7 +91,6 @@ body {
   border-radius: 0.5rem;
   cursor: pointer;
   transition: all 0.2s;
-  margin-bottom: 0.5rem;
 }
 
 .course-item:hover {
@@ -113,6 +111,8 @@ body {
   display: flex;
   flex-direction: row-reverse;
   padding-bottom: 16px;
+  justify-content: center;
+  gap: 16px;
 }
 
 .main-content h2 {
@@ -128,12 +128,13 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1rem;
 
-  max-height: 562px;
+  max-height: 600px;
   overflow-y: auto;
   overflow-x: hidden;
   width: 319px;
 
   padding-top: 16px;
+  height: fit-content;
 }
 
 .video-card {
@@ -141,6 +142,7 @@ body {
   border-radius: 0.5rem;
   padding: 0 1rem;
   transition: transform 0.2s;
+  max-height: 200px;
 }
 
 .video-card:hover {
@@ -159,6 +161,8 @@ body {
   font-size: 0.875rem;
   margin-bottom: 1rem;
   color: var(--text-primary);
+
+  max-width: 213px;
 }
 
 .video-actions {
@@ -200,8 +204,9 @@ body {
 .video-player-container {
   overflow: hidden;
   width: 100%;
-  padding-right: 6px;
-  border-right: 1px solid var(--border-color);
+  max-width: 1280px;
+  padding-right: 8px;
+  border-right: 1px solid gray;
   padding-top: 16px;
 }
 
@@ -250,17 +255,58 @@ video {
   cursor: pointer;
 }
 
+.sidebar {
+  overflow-x: scroll;
+  padding: 8px;
+}
+
+.courseList {
+  display: flex;
+  max-width: 2600px;
+  width: max-content;
+  gap: 8px;
+}
+
+@media (max-width: 1200px) {
+
+  .video-grid {
+    height: 420px;
+  }
+
+}
+
 
 @media (min-width: 1920px) {
   .container {
-    display: flex;
-    flex-direction: column-reverse;
     max-width: 1920px;
-    margin: 0 auto;
   }
 
   .video-grid {
     width: 500px;
+    height: fit-content;
+    max-height: 720px;
   }
+  
+
+  video {
+    width: 1280px;
+    max-height: 720px;
+    background: #000;
+  }
+
+  .video-title {
+    max-width: max-content;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: gray; 
+  border-radius: 40px;
+  border: 5px solid rgba(255, 0, 0, 0);
 }
 

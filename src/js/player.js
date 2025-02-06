@@ -32,9 +32,9 @@ function displayCourses() {
   
   currentCourses.forEach((course, index) => {
     const courseElement = document.createElement('div');
-    courseElement.className = `course-item swiper-slide ${index === activeCourseIndex ? 'active' : ''}`;
+    courseElement.className = `course-item ${index === activeCourseIndex ? 'active' : ''}`;
     courseElement.innerHTML = `
-      <i class="fas fa-book-reader"></i>
+      <i class="fas fa-book"></i>
       <span>${course.name}</span>
       <span class="badge">${course.videos.filter(v => v.watched).length}/${course.videos.length}</span>
     `;
@@ -57,7 +57,7 @@ function displayVideos(courseIndex) {
     videoList.innerHTML = `
       <div class="empty-state">
         <i class="fas fa-video-slash"></i>
-        <p>Nenhum vídeo encontrado neste curso</p>
+        <p>Nenhum vídeo encontrado neste Material</p>
       </div>
     `;
     return;
@@ -104,7 +104,5 @@ function playVideo(videoPath) {
     console.error('Erro ao reproduzir vídeo:', error);
     alert('Erro ao reproduzir o vídeo. Por favor, verifique se o arquivo existe e é suportado.');
   });
-  
-  videoPlayer.scrollIntoView({ behavior: 'smooth' });
 }
 
