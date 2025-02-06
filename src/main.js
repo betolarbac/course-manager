@@ -5,7 +5,6 @@ const fs = require('fs');
 let mainWindow;
 const watchedVideosFile = path.join(app.getPath('userData'), 'watched-videos.json');
 
-// Função para carregar vídeos assistidos
 function loadWatchedVideos() {
   try {
     if (fs.existsSync(watchedVideosFile)) {
@@ -18,7 +17,6 @@ function loadWatchedVideos() {
   return {};
 }
 
-// Função para salvar vídeos assistidos
 function saveWatchedVideos(watchedVideos) {
   try {
     fs.writeFileSync(watchedVideosFile, JSON.stringify(watchedVideos, null, 2));

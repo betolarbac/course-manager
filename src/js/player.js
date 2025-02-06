@@ -87,14 +87,13 @@ async function toggleWatched(courseIndex, videoIndex) {
   const video = currentCourses[courseIndex].videos[videoIndex];
   video.watched = !video.watched;
   
-  // Salvar estado no arquivo JSON
   await ipcRenderer.invoke('toggle-watched', video.path, video.watched);
   
-  // Atualizar localStorage
+
   localStorage.setItem('coursesData', JSON.stringify(currentCourses));
   
   displayVideos(courseIndex);
-  displayCourses(); // Atualiza o contador de vídeos assistidos
+  displayCourses(); 
 }
 
 function playVideo(videoPath) {
