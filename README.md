@@ -45,13 +45,15 @@ npm start
 Isto irá abrir o projeto em uma tela no seu pc
 
 ### Padrão de Pasta de curso a ser seguida 
+```Estrutara de Pasta
 ├── Pasta do Curso/
-│   ├── Modulos/
-│   │   └── Video
-│   │   └── Video
 │   ├── Modulos/
-│   │   └── Video 
-│   │   └── Video  
+│   │   ├── Video1.mp4
+│   │   └── Video2.mp4
+│   ├── OutroModulo/
+│   │   ├── Video3.mp4
+│   │   └── Video4.mp4
+```
 
 
 ### Stack utilizada
