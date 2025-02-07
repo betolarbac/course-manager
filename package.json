@@ -17,12 +17,15 @@
       "package.json"
     ],
     "win": {
+      "icon": "src/assets/icon.ico",
       "target": "nsis"
     },
     "mac": {
+      "icon": "src/assets/icon.icns",
       "target": "dmg"
     },
     "linux": {
+      "icon": "src/assets/icon.png",
       "target": "AppImage"
     }
   },
