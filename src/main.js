@@ -42,10 +42,6 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
-  protocol.registerFileProtocol('local', (request, callback) => {
-    const filePath = request.url.replace('local://', '');
-    callback(decodeURI(filePath));
-  });
   createWindow();
 });
 
@@ -105,4 +101,8 @@ ipcMain.handle('toggle-watched', async (event, videoPath, watched) => {
   watchedVideos[videoPath] = watched;
   saveWatchedVideos(watchedVideos);
   return true;
+});
+
+ipcMain.handle('get-video-url', (event, videoPath) => {
+  return 'file://' + videoPath;
 });
