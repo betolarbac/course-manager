@@ -96,12 +96,18 @@ async function toggleWatched(courseIndex, videoIndex) {
   displayCourses(); 
 }
 
-function playVideo(videoPath) {
+async function playVideo(videoPath) {
   const videoPlayer = document.getElementById('videoPlayer');
-  videoPlayer.src = `local://${videoPath}`;
-  videoPlayer.play().catch(error => {
-    console.error('Erro ao reproduzir vídeo:', error);
-    alert('Erro ao reproduzir o vídeo. Por favor, verifique se o arquivo existe e é suportado.');
-  });
+  try {
+    const fileUrl = await ipcRenderer.invoke('get-video-url', videoPath);
+    videoPlayer.src = fileUrl;
+    videoPlayer.play().catch(error => {
+      console.error('Erro ao reproduzir vídeo:', error);
+      alert('Erro ao reproduzir o vídeo. Por favor, verifique se o arquivo existe e é suportado.');
+    });
+  } catch (error) {
+    console.error('Erro ao obter URL do vídeo:', error);
+    alert('Erro ao carregar o vídeo. Por favor, verifique se o arquivo existe.');
+  }
 }
 
