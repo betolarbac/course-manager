@@ -44,6 +44,16 @@ npm start
 
 Isto irá abrir o projeto em uma tela no seu pc
 
+### Padrão de Pasta de curso a ser seguida 
+├── Pasta do Curso/
+│   ├── Modulos/
+│   │   └── Video
+│   │   └── Video
+│   ├── Modulos/
+│   │   └── Video 
+│   │   └── Video  
+
+
 ### Stack utilizada
 - Electron 
 - JavaScript
